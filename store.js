@@ -1,13 +1,14 @@
 // SCIC 소식 저장소. 주소에 ?demo 가 있으면 이 기기 안에만 저장하는 체험 모드로 돕니다.
 // 읽기는 누구나, 쓰기는 편집자로 등록된 구글 계정으로 로그인한 사람만 합니다.
 // 편집자 명단은 meta/editors 문서({admins, editors})에 있고, 규칙이 로그인한 이메일을 이 명단과 맞춰 봅니다.
+// 2026-09-30 Firebase 프로젝트를 지우고 체험판으로 돌립니다. 다시 연결하려면 새 프로젝트의 웹 설정값을 넣으세요.
 export const firebaseConfig = {
-  apiKey: "AIzaSyDA9Ad93x0qwznYhSUaCOkOmfF1x8Wmpe8",
-  authDomain: "scic-monthly-news.firebaseapp.com",
-  projectId: "scic-monthly-news",
-  storageBucket: "scic-monthly-news.firebasestorage.app",
-  messagingSenderId: "580222134384",
-  appId: "1:580222134384:web:c6bb8b28084cc5abfdacb5",
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
 };
 
 export const isDemo = new URLSearchParams(location.search).has("demo") || !firebaseConfig.projectId;
