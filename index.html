@@ -1,0 +1,1188 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SCIC 월간 소식</title>
+<meta name="description" content="사랑의교회 SCIC 동문회의 전체 행사 소식과 선교 그룹 소식을 달마다 모아 둔 소식지입니다.">
+<meta property="og:title" content="SCIC 월간 소식">
+<meta property="og:description" content="전체 행사 소식 · 선교 그룹 소식을 달마다 모아 전합니다">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://eunseo9311.github.io/scic-news/og.png">
+<meta property="og:url" content="https://eunseo9311.github.io/scic-news/">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23d4506f'/><text x='32' y='43' text-anchor='middle' font-family='Arial' font-weight='900' font-size='26' fill='white'>SC</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&display=swap">
+<style>
+  :root {
+    --ink: #2c2f45;
+    --soft: #676b82;
+    --faint: #9a9db0;
+    --line: #e9e6ee;
+    --bg: #faf8f6;
+    --card: #ffffff;
+
+    /* 로고의 빨강·남색을 한 단계 밝고 부드럽게 */
+    --rose: #d4506f;  --rose-d: #b4415f;  --rose-m: #f2c3cf;  --rose-l: #fcf0f3;
+    --peri: #5b67b3;  --peri-d: #4a559c;  --peri-m: #cdd2ef;  --peri-l: #f0f2fb;
+    --sand: #f6efe6;
+
+    --serif: "Noto Serif KR", "AppleMyungjo", serif;
+    --r: 18px;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 17px; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; color: var(--ink); background: var(--bg);
+    font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    line-height: 1.65; word-break: keep-all; overflow-wrap: anywhere;
+  }
+  [hidden] { display: none !important; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  button, input, textarea, select { font: inherit; color: inherit; }
+  button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  .narrow { max-width: 760px; }
+
+  /* 머리 */
+  header.top { background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20; }
+  .top .wrap { display: flex; align-items: center; gap: 18px; min-height: 68px; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex: none; }
+  .logo img { height: 30px; width: auto; }
+  .logo span { font-size: .8rem; font-weight: 700; color: var(--rose-d); border-left: 1px solid var(--line); padding-left: 12px; letter-spacing: .02em; }
+  nav.menu { display: flex; gap: 4px; margin-left: auto; }
+  nav.menu a {
+    text-decoration: none; padding: 9px 14px; border-radius: 999px; font-weight: 600; font-size: .94rem; color: var(--soft); white-space: nowrap;
+  }
+  nav.menu a:hover { color: var(--ink); background: var(--bg); }
+  nav.menu a.on { color: var(--rose-d); background: var(--rose-l); }
+  @media (max-width: 760px) {
+    .top .wrap { flex-wrap: wrap; gap: 0; padding-top: 10px; }
+    .logo img { height: 26px; }
+    nav.menu { width: calc(100% + 40px); margin: 6px -20px 0; padding: 0 14px 8px; overflow-x: auto; scrollbar-width: none; }
+    nav.menu::-webkit-scrollbar { display: none; }
+  }
+
+  /* 이달의 소식 머리 */
+  .mast {
+    background:
+      radial-gradient(70% 90% at 0% 0%, #fdeef2 0%, transparent 60%),
+      radial-gradient(60% 80% at 100% 0%, #eef0fb 0%, transparent 65%),
+      #fffdfb;
+    border-bottom: 1px solid var(--line);
+  }
+  .mast .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; padding-top: 44px; padding-bottom: 44px; }
+  .eyebrow { font-size: .78rem; font-weight: 800; letter-spacing: .14em; color: var(--rose); text-transform: uppercase; }
+  .mast h1 { font-family: var(--serif); font-size: 2.6rem; line-height: 1.2; margin: 10px 0 6px; font-weight: 700; }
+  .mast .headline { font-family: var(--serif); font-size: 1.25rem; color: var(--peri-d); margin: 0 0 14px; }
+  .mast .intro { color: var(--soft); margin: 0 0 22px; white-space: pre-wrap; }
+  .mast .cover { aspect-ratio: 4/3; border-radius: 22px; overflow: hidden; background: var(--sand); box-shadow: 0 24px 50px -30px #5b67b380; }
+  .mast .cover img { width: 100%; height: 100%; object-fit: cover; }
+  .issue-nav { display: flex; align-items: center; gap: 8px; margin-top: 22px; flex-wrap: wrap; }
+  .issue-nav a, .issue-nav span { font-size: .88rem; color: var(--soft); text-decoration: none; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: #fff; }
+  .issue-nav span { opacity: .45; }
+  @media (max-width: 760px) {
+    .mast .wrap { grid-template-columns: 1fr; gap: 22px; padding-top: 26px; padding-bottom: 28px; }
+    .mast h1 { font-size: 2rem; }
+    .mast .cover { order: -1; }
+  }
+
+  /* 나누기 단추 */
+  .share { display: flex; flex-wrap: wrap; gap: 8px; }
+  .sbtn {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 10px 18px; border-radius: 999px;
+    border: 1px solid var(--line); background: #fff; font-weight: 700; font-size: .92rem; text-decoration: none; color: var(--ink);
+  }
+  .sbtn svg { width: 20px; height: 20px; flex: none; }
+  .sbtn.kakao { background: #fee500; border-color: #fee500; color: #191600; }
+  .sbtn.mail { color: var(--peri-d); border-color: var(--peri-m); }
+  .sbtn:active { transform: scale(.97); }
+
+  /* 구역 */
+  section.block { padding: 46px 0 8px; }
+  .block-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin-bottom: 20px; border-bottom: 2px solid var(--ink); padding-bottom: 12px; }
+  .block-head h2 { margin: 0; font-family: var(--serif); font-size: 1.55rem; display: flex; align-items: center; gap: 12px; }
+  .block-head h2 i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); display: inline-block; }
+  .block-head small { color: var(--soft); font-size: .88rem; }
+  .block-head a { color: var(--soft); font-size: .9rem; text-decoration: none; white-space: nowrap; }
+  .c-event { --c: var(--rose); --cd: var(--rose-d); --cl: var(--rose-l); --cm: var(--rose-m); }
+  .c-group { --c: var(--peri); --cd: var(--peri-d); --cl: var(--peri-l); --cm: var(--peri-m); }
+
+  /* 소식 카드 */
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  .grid.two { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 560px) { .grid, .grid.two { grid-template-columns: 1fr; gap: 18px; } }
+  .card { display: flex; flex-direction: column; text-decoration: none; background: var(--card); border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); transition: transform .15s, box-shadow .15s; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 18px 36px -24px #2c2f4560; }
+  .card .ph { aspect-ratio: 4/3; background: var(--cl); overflow: hidden; }
+  .card .ph img { width: 100%; height: 100%; object-fit: cover; }
+  .card .ph.none { display: grid; place-items: center; color: var(--cd); font-family: var(--serif); font-size: 1.3rem; opacity: .7; }
+  .card .tx { padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .card h3 { margin: 0; font-family: var(--serif); font-size: 1.15rem; line-height: 1.45; }
+  .card p { margin: 0; color: var(--soft); font-size: .92rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .card .when { font-size: .84rem; color: var(--faint); margin-top: auto; padding-top: 6px; }
+  .chip { display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; font-size: .78rem; font-weight: 700; padding: 3px 11px; border-radius: 999px; background: var(--cl); color: var(--cd); }
+  .chip.draft { background: #fff4d6; color: #8a6200; }
+
+  .card.feature { grid-column: span 3; flex-direction: row; }
+  .card.feature .ph { flex: 1.25; aspect-ratio: auto; min-height: 320px; }
+  .card.feature .tx { flex: 1; padding: 30px 32px; justify-content: center; gap: 10px; }
+  .card.feature h3 { font-size: 1.6rem; }
+  .card.feature p { -webkit-line-clamp: 4; font-size: 1rem; }
+  @media (max-width: 900px) { .card.feature { grid-column: span 2; } }
+  @media (max-width: 680px) {
+    .card.feature { grid-column: span 1; flex-direction: column; }
+    .card.feature .ph { aspect-ratio: 4/3; min-height: 0; }
+    .card.feature .tx { padding: 18px 18px 22px; }
+    .card.feature h3 { font-size: 1.3rem; }
+  }
+
+  .empty { text-align: center; color: var(--soft); padding: 42px 16px; background: #fff; border-radius: var(--r); border: 1px dashed var(--line); }
+
+  /* 페이지 머리 */
+  .phead { padding: 38px 0 6px; }
+  .phead h1 { margin: 6px 0 6px; font-family: var(--serif); font-size: 2rem; }
+  .phead p { margin: 0; color: var(--soft); }
+  .month-h { font-family: var(--serif); font-size: 1.2rem; margin: 34px 0 14px; display: flex; align-items: center; gap: 10px; }
+  .month-h a { font-family: Pretendard, sans-serif; font-size: .85rem; color: var(--soft); text-decoration: none; margin-left: auto; }
+
+  /* 선교 그룹 */
+  .groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-top: 24px; }
+  .gtile { display: flex; flex-direction: column; gap: 4px; padding: 18px; border-radius: 16px; background: #fff; border: 1px solid var(--line); text-decoration: none; }
+  .gtile:hover { border-color: var(--peri-m); background: var(--peri-l); }
+  .gtile.add { border: 2px dashed var(--peri-m); background: var(--peri-l); color: var(--peri-d); text-align: left; cursor: pointer; }
+  .gname { display: flex; gap: 6px; }
+  .gname input { flex: 1; min-width: 0; }
+  .gname button { flex: none; width: 44px; border-radius: 10px; border: 1.5px solid var(--line); background: #fff; color: #b3261e; font-size: 1.1rem; }
+  .gtile b { font-size: 1.02rem; }
+  .gtile span { font-size: .84rem; color: var(--soft); }
+
+  /* 보관함 */
+  .year { margin-top: 34px; }
+  .year h2 { font-family: var(--serif); font-size: 1.5rem; margin: 0 0 14px; }
+  .months { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+  @media (max-width: 900px) { .months { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 560px) { .months { grid-template-columns: repeat(3, 1fr); gap: 8px; } }
+  .mon { border-radius: 14px; background: #fff; border: 1px solid var(--line); overflow: hidden; text-decoration: none; display: flex; flex-direction: column; }
+  .mon .ph { aspect-ratio: 1; background: var(--sand); }
+  .mon .ph img { width: 100%; height: 100%; object-fit: cover; }
+  .mon .tx { padding: 8px 10px 10px; }
+  .mon b { font-size: 1rem; display: block; }
+  .mon span { font-size: .76rem; color: var(--soft); display: block; line-height: 1.4; }
+  .mon.off { background: transparent; border-style: dashed; color: var(--faint); pointer-events: none; }
+  .mon.off .ph { display: none; }
+  .mon.off .tx { margin-top: auto; }
+  .mon:not(.off):hover { border-color: var(--rose-m); }
+
+  /* 소식 한 편 */
+  .crumb { font-size: .88rem; color: var(--soft); padding-top: 28px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .crumb a { text-decoration: none; }
+  .crumb a:hover { text-decoration: underline; }
+  article.story h1 { font-family: var(--serif); font-size: 2.15rem; line-height: 1.35; margin: 14px 0 8px; }
+  article.story .lead { font-size: 1.12rem; color: var(--soft); margin: 0 0 14px; }
+  article.story .by { font-size: .88rem; color: var(--faint); padding-bottom: 20px; border-bottom: 1px solid var(--line); margin-bottom: 26px; }
+  @media (max-width: 560px) { article.story h1 { font-size: 1.6rem; } }
+  .w5 { background: var(--cl); border-radius: var(--r); padding: 20px 22px; margin-bottom: 30px; }
+  .w5 h2 { margin: 0 0 10px; font-size: .92rem; color: var(--cd); letter-spacing: .04em; }
+  .w5 dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; }
+  .w5 dt { font-weight: 800; color: var(--cd); white-space: nowrap; }
+  .w5 dd { margin: 0; }
+  .prose p { margin: 0 0 1.1em; font-size: 1.06rem; line-height: 1.9; }
+  .story h2.sub { font-family: var(--serif); font-size: 1.3rem; margin: 40px 0 16px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+  .gallery.one { grid-template-columns: 1fr; }
+  .gallery figure { margin: 0; }
+  .gallery button { display: block; width: 100%; padding: 0; border: none; background: var(--sand); border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; }
+  .gallery.one button { aspect-ratio: auto; }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery figcaption { font-size: .84rem; color: var(--soft); padding: 6px 2px 0; }
+  .video { position: relative; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: #000; margin-bottom: 14px; }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .vlink { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-radius: 14px; background: #fff; border: 1px solid var(--line); text-decoration: none; margin-bottom: 10px; font-weight: 600; }
+  .iv { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 22px; margin-bottom: 16px; }
+  .iv-who { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+  .iv-who b { font-size: 1.1rem; }
+  .iv-who span { color: var(--soft); font-size: .9rem; }
+  .iv .q { font-weight: 700; color: var(--cd); margin: 14px 0 4px; }
+  .iv .q:first-of-type { margin-top: 0; }
+  .iv .a { margin: 0; line-height: 1.85; }
+  .iv .a::before { content: "“"; font-family: var(--serif); color: var(--cm); font-size: 1.5rem; line-height: 0; vertical-align: -.35em; margin-right: 2px; }
+  .share-box { margin: 44px 0 20px; padding: 22px; border-radius: var(--r); background: #fff; border: 1px solid var(--line); }
+  .share-box h2 { margin: 0 0 12px; font-size: 1rem; }
+  .more { margin: 30px 0 0; }
+
+  /* 사진 크게 보기 */
+  .lb { position: fixed; inset: 0; z-index: 50; background: #16172af2; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }
+  .lb img { max-height: calc(100vh - 150px); max-width: 100%; object-fit: contain; border-radius: 8px; }
+  .lb p { color: #fff; margin: 12px 0 0; text-align: center; }
+  .lb .x { position: absolute; top: 14px; right: 14px; }
+  .lb .pv, .lb .nx { position: absolute; top: 50%; transform: translateY(-50%); }
+  .lb .pv { left: 10px; } .lb .nx { right: 10px; }
+  .lb button { width: 52px; height: 52px; border-radius: 50%; border: none; background: #ffffff24; color: #fff; font-size: 1.5rem; }
+
+  /* 편집 */
+  .ed { padding-top: 30px; padding-bottom: 80px; }
+  .ed h1 { font-family: var(--serif); font-size: 1.7rem; margin: 0 0 20px; }
+  .fset { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 22px; margin-bottom: 18px; }
+  .fset > h2 { margin: 0 0 4px; font-size: 1.05rem; }
+  .fset > .hint { margin: 0 0 16px; color: var(--soft); font-size: .88rem; }
+  .field { display: grid; gap: 6px; margin-bottom: 14px; }
+  .field:last-child { margin-bottom: 0; }
+  .field label, .lab { font-weight: 700; font-size: .92rem; }
+  .field label small { font-weight: 500; color: var(--faint); margin-left: 4px; }
+  input[type=text], input[type=month], input[type=password], input[type=url], input[type=email], textarea, select {
+    width: 100%; border: 1.5px solid var(--line); border-radius: 12px; padding: 12px 14px; background: #fff; min-height: 48px;
+  }
+  textarea { resize: vertical; min-height: 110px; line-height: 1.7; }
+  textarea.big { min-height: 260px; }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: var(--peri); box-shadow: 0 0 0 3px var(--peri-l); }
+  .w5-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+  @media (max-width: 640px) { .w5-form { grid-template-columns: 1fr; } }
+  .w5-form .field label b { display: inline-block; min-width: 3.3em; color: var(--rose-d); }
+  .seg { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .seg label { border: 1.5px solid var(--line); border-radius: 14px; padding: 14px; display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: 700; }
+  .seg input { accent-color: var(--rose); width: 20px; height: 20px; }
+  .seg label:has(input:checked) { border-color: var(--rose); background: var(--rose-l); color: var(--rose-d); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 12px 20px;
+    border-radius: 12px; border: none; background: var(--rose); color: #fff; font-weight: 700; text-decoration: none;
+  }
+  .btn.peri { background: var(--peri); }
+  .btn.line { background: #fff; color: var(--ink); border: 1.5px solid var(--line); }
+  .btn.ghost { background: transparent; color: var(--soft); }
+  .btn.danger { background: #fff; color: #b3261e; border: 1.5px solid #f0c9c6; }
+  .btn:disabled { opacity: .5; cursor: default; }
+  .btn.sm { min-height: 38px; padding: 6px 14px; font-size: .88rem; border-radius: 10px; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .spacer { flex: 1; }
+  .phs { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; margin-top: 14px; }
+  .phs .p { border: 1.5px solid var(--line); border-radius: 14px; overflow: hidden; background: #fff; }
+  .phs .p.cover { border-color: var(--rose); box-shadow: 0 0 0 2px var(--rose-l); }
+  .phs img { aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+  .phs .pc { padding: 8px; display: grid; gap: 6px; }
+  .phs .pc input[type=text] { min-height: 38px; padding: 7px 10px; font-size: .88rem; }
+  .phs .pc .row { gap: 6px; font-size: .84rem; justify-content: space-between; }
+  .phs .pc label { display: flex; gap: 5px; align-items: center; cursor: pointer; }
+  .drop { border: 2px dashed var(--peri-m); border-radius: 14px; padding: 22px; text-align: center; color: var(--peri-d); background: var(--peri-l); cursor: pointer; font-weight: 700; display: block; }
+  .drop small { display: block; font-weight: 500; color: var(--soft); margin-top: 4px; }
+  .ivf { border: 1.5px solid var(--line); border-radius: 14px; padding: 16px; margin-bottom: 12px; }
+  .ivf .qa { display: grid; gap: 6px; padding: 10px 0; border-top: 1px dashed var(--line); }
+  .savebar { position: sticky; bottom: 0; background: #fffffff2; backdrop-filter: blur(6px); border-top: 1px solid var(--line); padding: 12px 0 calc(12px + env(safe-area-inset-bottom)); z-index: 10; }
+  .savebar .wrap { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+  .adm-list { display: grid; gap: 8px; }
+  .adm-item { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+  .adm-item img { width: 64px; height: 48px; object-fit: cover; border-radius: 8px; flex: none; background: var(--sand); }
+  .adm-item .t { flex: 1; min-width: 0; }
+  .adm-item .t b { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .adm-item .t span { font-size: .82rem; color: var(--soft); }
+  .gnames { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+
+  /* 창 */
+  .modal { position: fixed; inset: 0; z-index: 40; background: #2c2f4566; display: grid; place-items: center; padding: 16px; }
+  .modal .box { background: #fff; border-radius: 22px; width: min(720px, 100%); max-height: calc(100vh - 32px); overflow: auto; padding: 24px; }
+  .modal h2 { margin: 0 0 6px; font-family: var(--serif); }
+  .modal .hint { color: var(--soft); font-size: .9rem; margin: 0 0 16px; }
+  .mail-prev { border: 1px solid var(--line); border-radius: 14px; margin-top: 16px; max-height: 420px; overflow: auto; background: #f4f3f6; padding: 12px; }
+
+  footer.foot { margin-top: 70px; background: #fff; border-top: 1px solid var(--line); padding: 30px 0 44px; font-size: .86rem; color: var(--soft); }
+  footer.foot .wrap { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; }
+  footer.foot img { height: 22px; opacity: .8; }
+  footer.foot a { color: var(--soft); }
+
+  .toast {
+    position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom)); transform: translateX(-50%) translateY(20px);
+    background: var(--ink); color: #fff; padding: 12px 20px; border-radius: 14px; opacity: 0; pointer-events: none;
+    transition: .25s; z-index: 60; max-width: calc(100% - 32px); text-align: center; font-weight: 600;
+  }
+  .toast.on { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .demo-bar { background: #fff4d6; color: #7a5600; text-align: center; font-size: .84rem; padding: 6px 12px; }
+  .loading { padding: 80px 0; text-align: center; color: var(--faint); }
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar" hidden></div>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#/"><img src="logo-scic.png" alt="SCIC SaRang Christian Impact Connect" width="509" height="88"><span>월간 소식</span></a>
+    <nav class="menu" id="menu">
+      <a href="#/" data-k="home">이달의 소식</a>
+      <a href="#/events" data-k="events">전체 행사 소식</a>
+      <a href="#/groups" data-k="groups">선교 그룹 소식</a>
+      <a href="#/archive" data-k="archive">지난 소식</a>
+      <a href="#/admin" data-k="admin" id="admLink" hidden>편집</a>
+    </nav>
+  </div>
+</header>
+<main id="app"><div class="loading">불러오는 중…</div></main>
+<footer class="foot">
+  <div class="wrap">
+    <img src="logo-scic.png" alt="SCIC">
+    <span>사랑의교회 SCIC 동문회 · 일터에서 의미와 가치를 찾는 사람들</span>
+    <span class="spacer"></span>
+    <a href="#/admin">편집실</a>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="module">
+import store, { isDemo, editorCode, summarize, DEFAULT_GROUPS } from "./store.js";
+
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const app = $("#app");
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const SECTIONS = { event: "전체 행사 소식", group: "선교 그룹 소식" };
+const W5 = [["who", "누가"], ["when", "언제"], ["where", "어디서"], ["what", "무엇을"], ["how", "어떻게"], ["why", "왜"]];
+
+if (isDemo) {
+  const bar = $("#demoBar");
+  bar.hidden = false;
+  bar.textContent = "체험 모드예요. 이 기기에만 저장되고, 편집 번호는 1234입니다.";
+}
+
+/* ── 작은 도구 ── */
+let toastTimer;
+function toast(msg) {
+  const el = $("#toast");
+  el.textContent = msg; el.classList.add("on");
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove("on"), 3200);
+}
+const fail = (e) => {
+  console.error(e);
+  if (e?.code === "permission-denied") toast("편집 번호가 맞지 않거나 저장할 수 없는 내용이에요.");
+  else toast("잠시 연결이 안 돼요. 조금 뒤에 다시 해 주세요.");
+};
+const issueLabel = (id) => { const [y, m] = id.split("-"); return `${y}년 ${+m}월호`; };
+const monthLabel = (id) => { const [y, m] = id.split("-"); return `${y}년 ${+m}월`; };
+const thisMonth = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`; };
+const shiftMonth = (id, n) => { let [y, m] = id.split("-").map(Number); m += n; while (m < 1) { m += 12; y--; } while (m > 12) { m -= 12; y++; } return `${y}-${String(m).padStart(2, "0")}`; };
+const pageUrl = (hash) => location.origin + location.pathname + location.search + hash;
+const isEditor = () => !!editorCode.get();
+function josa(word, pair) {
+  const w = String(word).trim(); const c = w.charCodeAt(w.length - 1);
+  const has = c >= 0xac00 && c <= 0xd7a3 ? (c - 0xac00) % 28 !== 0 : false;
+  const [a, b] = pair.split("/");
+  return w + (has ? a : b);
+}
+const paras = (t) => String(t || "").split(/\n{2,}|\r\n\r\n/).map((p) => p.trim()).filter(Boolean);
+const summaryOf = (a) => a.lead || paras(a.body)[0] || [a.when, a.where].filter(Boolean).join(" · ");
+const visible = (list) => list.filter((a) => a.status === "published" || (isEditor() && a.status === "draft"));
+const order = (list) => [...list].sort((a, b) => (!!b.featured - !!a.featured) || a.createdAt - b.createdAt);
+
+let settingsCache;
+async function settings() {
+  if (!settingsCache) settingsCache = await store.settings().catch(() => ({ groups: DEFAULT_GROUPS }));
+  if (!settingsCache.groups?.length) settingsCache.groups = DEFAULT_GROUPS;
+  return settingsCache;
+}
+let issuesCache;
+async function allIssues(force) {
+  if (!issuesCache || force) issuesCache = await store.issues();
+  return issuesCache;
+}
+const publicIssues = (list) => list.filter((i) => i.count > 0 || isEditor());
+
+/* ── 아이콘 ── */
+const I = {
+  kakao: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>`,
+  mail: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>`,
+  link: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>`,
+  play: `<svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="11" fill="#e0405e"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>`,
+};
+const shareButtons = (kind) => `
+  <div class="share">
+    <button class="sbtn kakao" data-share="kakao">${I.kakao}카카오톡으로 보내기</button>
+    <button class="sbtn mail" data-share="mail">${I.mail}${kind === "issue" ? "이메일 소식지 만들기" : "이메일로 보내기"}</button>
+    <button class="sbtn" data-share="link">${I.link}링크 복사</button>
+  </div>`;
+
+async function copyText(text) {
+  try { await navigator.clipboard.writeText(text); return true; }
+  catch {
+    const t = document.createElement("textarea"); t.value = text; document.body.appendChild(t); t.select();
+    const ok = document.execCommand("copy"); t.remove(); return ok;
+  }
+}
+async function shareKakao({ title, text, url }) {
+  const touch = matchMedia("(pointer: coarse)").matches;
+  if (navigator.share && touch) {
+    try { await navigator.share({ title, text, url }); return; }
+    catch (e) { if (e.name === "AbortError") return; }
+  }
+  await copyText(`${title}\n${text ? text + "\n" : ""}${url}`);
+  toast("복사했어요. 카카오톡 대화방에 붙여넣어 주세요.");
+}
+function mailto(subject, body, to = "") {
+  location.href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+/* ── 공통 조각 ── */
+function card(a, groups, { feature = false, showIssue = false } = {}) {
+  const kind = a.section === "group" ? "c-group" : "c-event";
+  const tag = a.section === "group" ? (a.group || "선교 그룹") : "전체 행사";
+  const img = a.coverThumb
+    ? `<div class="ph"><img src="${esc(a.coverThumb)}" alt="" loading="lazy"></div>`
+    : `<div class="ph none">SCIC</div>`;
+  const when = [showIssue ? issueLabel(a.issue) : "", a.when].filter(Boolean).join(" · ");
+  return `<a class="card ${kind} ${feature ? "feature" : ""}" href="#/a/${esc(a.id)}">
+    ${img}
+    <div class="tx">
+      <div class="row" style="gap:6px"><span class="chip">${esc(tag)}</span>${a.status === "draft" ? `<span class="chip draft">임시 저장</span>` : ""}</div>
+      <h3>${esc(a.title)}</h3>
+      <p>${esc(summaryOf(a))}</p>
+      ${when ? `<div class="when">${esc(when)}</div>` : ""}
+    </div>
+  </a>`;
+}
+function setMenu(k) { $$("#menu a").forEach((a) => a.classList.toggle("on", a.dataset.k === k)); }
+function byMonth(list) {
+  const m = {};
+  for (const a of list) (m[a.issue] ||= []).push(a);
+  return Object.entries(m).sort((a, b) => b[0].localeCompare(a[0]));
+}
+
+/* ── 화면: 한 달 소식 ── */
+async function viewIssue(id) {
+  setMenu(id ? "" : "home");
+  const [issues, groups] = [publicIssues(await allIssues()), (await settings()).groups];
+  if (!id) id = issues[0]?.id;
+  if (!id) {
+    app.innerHTML = `<div class="wrap narrow"><div class="phead"><div class="eyebrow">SCIC 월간 소식</div><h1>아직 올라온 소식이 없어요</h1><p>첫 소식이 올라오면 이곳에 달마다 모입니다.</p></div></div>`;
+    return;
+  }
+  const [issue, list] = await Promise.all([store.issue(id), store.articlesWhere("issue", id)]);
+  const arts = order(visible(list));
+  const events = arts.filter((a) => a.section === "event");
+  const gr = arts.filter((a) => a.section === "group")
+    .sort((a, b) => groups.indexOf(a.group) - groups.indexOf(b.group) || a.createdAt - b.createdAt);
+  const ids = issues.map((i) => i.id);
+  const idx = ids.indexOf(id);
+  const newer = ids[idx - 1], older = ids[idx + 1];
+  const cover = issue?.coverThumb || arts.find((a) => a.coverThumb)?.coverThumb;
+
+  app.innerHTML = `
+    <section class="mast">
+      <div class="wrap">
+        <div>
+          <div class="eyebrow">SCIC 월간 소식</div>
+          <h1>${issueLabel(id)}</h1>
+          ${issue?.headline ? `<p class="headline">${esc(issue.headline)}</p>` : ""}
+          ${issue?.intro ? `<p class="intro">${esc(issue.intro)}</p>` : `<p class="intro">전체 행사 소식 ${events.length}편, 선교 그룹 소식 ${gr.length}편을 담았습니다.</p>`}
+          ${shareButtons("issue")}
+          <div class="issue-nav">
+            ${older ? `<a href="#/issue/${older}">‹ ${issueLabel(older)}</a>` : `<span>‹ 이전 호</span>`}
+            ${newer ? `<a href="#/issue/${newer}">${issueLabel(newer)} ›</a>` : `<span>다음 호 ›</span>`}
+            <a href="#/archive">지난 소식 모두 보기</a>
+          </div>
+        </div>
+        ${cover ? `<div class="cover"><img src="${esc(cover)}" alt=""></div>` : ""}
+      </div>
+    </section>
+    <div class="wrap">
+      <section class="block c-event">
+        <div class="block-head"><h2><i></i>전체 행사 소식</h2><a href="#/events">모두 보기 ›</a></div>
+        ${events.length ? `<div class="grid ${events.length === 2 ? "two" : ""}">${events.map((a, i) => card(a, groups, { feature: i === 0 && events.length !== 2 })).join("")}</div>` : `<div class="empty">이달의 전체 행사 소식이 아직 없어요.</div>`}
+      </section>
+      <section class="block c-group">
+        <div class="block-head"><h2><i></i>선교 그룹 소식</h2><a href="#/groups">그룹별로 보기 ›</a></div>
+        ${gr.length ? `<div class="grid">${gr.map((a) => card(a, groups)).join("")}</div>` : `<div class="empty">이달의 선교 그룹 소식이 아직 없어요.</div>`}
+      </section>
+      ${isEditor() ? `<div class="more row"><a class="btn peri" href="#/admin?m=${id}">이 달 편집하기</a></div>` : ""}
+    </div>`;
+
+  const title = `SCIC 월간 소식 ${issueLabel(id)}`;
+  const url = pageUrl(`#/issue/${id}`);
+  const titles = arts.slice(0, 5).map((a) => `· ${a.title}`).join("\n");
+  wireShare({
+    kakao: () => shareKakao({ title, text: (issue?.headline ? issue.headline + "\n" : "") + titles, url }),
+    mail: () => mailModal(id, issue, arts, groups),
+    link: async () => { await copyText(url); toast("링크를 복사했어요."); },
+  });
+}
+function wireShare(h) {
+  $$("[data-share]").forEach((b) => b.onclick = () => h[b.dataset.share]?.());
+}
+
+/* ── 이메일 소식지 ── */
+function emailHtml(id, issue, arts, groups) {
+  const url = pageUrl(`#/issue/${id}`);
+  const logo = new URL("logo-scic.png", location.href).href;
+  const item = (a) => {
+    const href = pageUrl(`#/a/${a.id}`);
+    const tag = a.section === "group" ? a.group : "전체 행사";
+    const color = a.section === "group" ? "#4a559c" : "#b4415f";
+    return `<tr><td style="padding:0 0 22px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #e9e6ee;border-radius:14px;border-collapse:separate">
+        <tr>
+          ${/^https?:/.test(a.coverThumb || "") ? `<td width="180" valign="top" style="padding:14px 0 14px 14px"><a href="${href}"><img src="${a.coverThumb}" width="180" alt="" style="display:block;width:180px;height:auto;border-radius:10px"></a></td>` : ""}
+          <td valign="top" style="padding:14px 16px;border-left:4px solid ${color};border-radius:14px 0 0 14px;font-family:Apple SD Gothic Neo,Malgun Gothic,sans-serif">
+            <div style="font-size:12px;font-weight:700;color:${color};margin-bottom:4px">${esc(tag)}</div>
+            <a href="${href}" style="font-size:17px;font-weight:700;color:#2c2f45;text-decoration:none;line-height:1.45">${esc(a.title)}</a>
+            <div style="font-size:14px;color:#676b82;line-height:1.6;margin-top:6px">${esc(summaryOf(a))}</div>
+            ${a.when || a.where ? `<div style="font-size:12px;color:#9a9db0;margin-top:6px">${esc([a.when, a.where].filter(Boolean).join(" · "))}</div>` : ""}
+          </td>
+        </tr>
+      </table>
+    </td></tr>`;
+  };
+  const sec = (name, list, color) => list.length ? `
+    <tr><td style="padding:18px 0 12px;font-family:Apple SD Gothic Neo,Malgun Gothic,sans-serif;font-size:19px;font-weight:800;color:#2c2f45;border-bottom:2px solid #2c2f45">
+      <span style="color:${color}">●</span> ${name}</td></tr>
+    <tr><td style="height:14px"></td></tr>
+    ${list.map(item).join("")}` : "";
+  const events = arts.filter((a) => a.section === "event");
+  const gr = arts.filter((a) => a.section === "group");
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f3f6"><tr><td align="center" style="padding:24px 12px">
+  <table role="presentation" width="640" cellpadding="0" cellspacing="0" style="max-width:640px;width:100%">
+    <tr><td style="background:#ffffff;border-radius:18px 18px 0 0;padding:26px 28px 8px"><img src="${logo}" height="28" alt="SCIC" style="display:block;height:28px;width:auto"></td></tr>
+    <tr><td style="background:#ffffff;padding:6px 28px 26px;font-family:Apple SD Gothic Neo,Malgun Gothic,sans-serif;border-bottom:1px solid #e9e6ee">
+      <div style="font-size:12px;letter-spacing:2px;font-weight:800;color:#d4506f">SCIC 월간 소식</div>
+      <div style="font-size:30px;font-weight:800;color:#2c2f45;margin:6px 0 4px">${issueLabel(id)}</div>
+      ${issue?.headline ? `<div style="font-size:17px;color:#4a559c;margin-bottom:10px">${esc(issue.headline)}</div>` : ""}
+      ${issue?.intro ? `<div style="font-size:15px;color:#676b82;line-height:1.7;white-space:pre-wrap">${esc(issue.intro)}</div>` : ""}
+    </td></tr>
+    <tr><td style="background:#faf8f6;padding:10px 28px 10px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        ${sec("전체 행사 소식", events, "#d4506f")}
+        ${sec("선교 그룹 소식", gr, "#5b67b3")}
+      </table>
+    </td></tr>
+    <tr><td align="center" style="background:#ffffff;border-radius:0 0 18px 18px;padding:24px 28px 30px;font-family:Apple SD Gothic Neo,Malgun Gothic,sans-serif">
+      <a href="${url}" style="display:inline-block;background:#d4506f;color:#ffffff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:12px;font-size:15px">사진·영상·인터뷰까지 웹에서 보기</a>
+      <div style="font-size:12px;color:#9a9db0;margin-top:16px">사랑의교회 SCIC 동문회 · 일터에서 의미와 가치를 찾는 사람들</div>
+    </td></tr>
+  </table></td></tr></table>`;
+}
+function emailText(id, issue, arts) {
+  const lines = [`SCIC 월간 소식 ${issueLabel(id)}`, issue?.headline || "", ""];
+  const add = (name, list) => {
+    if (!list.length) return;
+    lines.push(`■ ${name}`);
+    list.forEach((a) => lines.push(`- ${a.section === "group" ? `[${a.group}] ` : ""}${a.title}`));
+    lines.push("");
+  };
+  add("전체 행사 소식", arts.filter((a) => a.section === "event"));
+  add("선교 그룹 소식", arts.filter((a) => a.section === "group"));
+  lines.push("사진·영상·인터뷰까지 보기:", pageUrl(`#/issue/${id}`));
+  return lines.filter((l, i) => l || lines[i - 1]).join("\n");
+}
+function modal(html) {
+  const m = document.createElement("div");
+  m.className = "modal";
+  m.innerHTML = `<div class="box" role="dialog" aria-modal="true">${html}</div>`;
+  m.addEventListener("click", (e) => { if (e.target === m || e.target.closest("[data-close]")) m.remove(); });
+  document.addEventListener("keydown", function k(e) { if (e.key === "Escape") { m.remove(); document.removeEventListener("keydown", k); } });
+  document.body.appendChild(m);
+  return m;
+}
+function mailModal(id, issue, arts, groups) {
+  const pub = arts.filter((a) => a.status === "published");
+  const html = emailHtml(id, issue, pub, groups);
+  const text = emailText(id, issue, pub);
+  const m = modal(`
+    <h2>이메일 소식지 · ${issueLabel(id)}</h2>
+    <p class="hint">① <b>편지 모양 복사</b>를 누르고 ② 메일(지메일·네이버 메일 등) 쓰기 창 본문에 붙여넣으세요. 받는 사람은 '숨은참조'에 넣으면 서로의 주소가 보이지 않아요.</p>
+    <div class="row">
+      <button class="btn" id="copyRich">편지 모양 복사</button>
+      <button class="btn line" id="openMail">메일 앱에서 글자로 보내기</button>
+      <span class="spacer"></span>
+      <button class="btn ghost" data-close>닫기</button>
+    </div>
+    <div class="mail-prev" id="mailPrev">${html}</div>`);
+  $("#copyRich", m).onclick = async () => {
+    try {
+      await navigator.clipboard.write([new ClipboardItem({
+        "text/html": new Blob([html], { type: "text/html" }),
+        "text/plain": new Blob([text], { type: "text/plain" }),
+      })]);
+    } catch {
+      const r = document.createRange(); r.selectNodeContents($("#mailPrev", m));
+      const s = getSelection(); s.removeAllRanges(); s.addRange(r); document.execCommand("copy"); s.removeAllRanges();
+    }
+    toast("복사했어요. 메일 쓰기 창 본문에 붙여넣으세요.");
+  };
+  $("#openMail", m).onclick = () => mailto(`[SCIC 월간 소식] ${issueLabel(id)}`, text);
+}
+
+/* ── 화면: 전체 행사 / 그룹 모아 보기 ── */
+async function viewList(kind, group) {
+  setMenu(kind === "event" ? "events" : "groups");
+  const groups = (await settings()).groups;
+  const list = order(visible(kind === "event" ? await store.articlesWhere("section", "event") : await store.articlesWhere("group", group)));
+  const cls = kind === "event" ? "c-event" : "c-group";
+  const title = kind === "event" ? "전체 행사 소식" : group;
+  const desc = kind === "event" ? "동문회 전체가 함께한 행사를 달마다 모았습니다." : "이 선교 그룹의 활동을 달마다 모았습니다.";
+  app.innerHTML = `
+    <div class="wrap ${cls}">
+      <div class="phead">
+        ${kind === "group" ? `<div class="crumb"><a href="#/groups">선교 그룹 소식</a> ›</div>` : `<div class="eyebrow">SCIC 월간 소식</div>`}
+        <h1>${esc(title)}</h1><p>${desc}</p>
+      </div>
+      ${list.length ? byMonth(list).map(([m, arr]) => `
+        <h2 class="month-h"><span class="chip">${monthLabel(m)}</span><a href="#/issue/${m}">${issueLabel(m)} 보기 ›</a></h2>
+        <div class="grid">${arr.map((a) => card(a, groups)).join("")}</div>`).join("") : `<div class="empty" style="margin-top:24px">아직 올라온 소식이 없어요.</div>`}
+    </div>`;
+}
+async function viewGroups() {
+  setMenu("groups");
+  const groups = (await settings()).groups;
+  const list = visible(await store.articlesWhere("section", "group"));
+  const count = {}, last = {};
+  for (const a of list) { count[a.group] = (count[a.group] || 0) + 1; if (!last[a.group] || a.issue > last[a.group]) last[a.group] = a.issue; }
+  const recent = order(list).sort((a, b) => b.issue.localeCompare(a.issue)).slice(0, 6);
+  app.innerHTML = `
+    <div class="wrap c-group">
+      <div class="phead"><div class="eyebrow">SCIC 월간 소식</div><h1>선교 그룹 소식</h1><p>${groups.length}개 선교 그룹이 달마다 보내온 활동 소식입니다. 그룹을 누르면 지난 소식까지 모아 볼 수 있어요.</p></div>
+      <div class="groups">
+        ${groups.map((g) => `<a class="gtile" href="#/group/${encodeURIComponent(g)}"><b>${esc(g)}</b><span>${count[g] ? `소식 ${count[g]}편 · 최근 ${monthLabel(last[g])}` : "아직 소식이 없어요"}</span></a>`).join("")}
+        ${isEditor() ? `<button class="gtile add" id="addGroup" type="button"><b>+ 새 그룹</b><span>선교 그룹 만들기</span></button>` : ""}
+      </div>
+      ${recent.length ? `<section class="block"><div class="block-head"><h2><i></i>최근 선교 그룹 소식</h2></div><div class="grid">${recent.map((a) => card(a, groups, { showIssue: true })).join("")}</div></section>` : ""}
+    </div>`;
+  $("#addGroup")?.addEventListener("click", () => addGroupModal(groups));
+}
+function addGroupModal(groups) {
+  const m = modal(`
+    <h2>새 선교 그룹 만들기</h2>
+    <p class="hint">만든 그룹은 바로 목록에 나오고, 소식을 쓸 때 고를 수 있어요.</p>
+    <form id="gForm" class="row">
+      <input type="text" id="gName" maxlength="30" placeholder="예: 제14선교그룹" style="flex:1;min-width:200px" value="제${groups.length + 1}선교그룹">
+      <button class="btn">만들기</button><button class="btn ghost" type="button" data-close>닫기</button>
+    </form>`);
+  const inp = $("#gName", m); inp.focus(); inp.select();
+  $("#gForm", m).onsubmit = async (e) => {
+    e.preventDefault();
+    const name = inp.value.trim();
+    if (!name) return toast("그룹 이름을 적어 주세요.");
+    if (groups.includes(name)) return toast("이미 있는 이름이에요.");
+    try {
+      await store.saveSettings(editorCode.get(), { groups: [...groups, name] });
+      settingsCache = null; m.remove(); toast(`${josa(name, "을/를")} 만들었어요.`); route();
+    } catch (err) { fail(err); }
+  };
+}
+
+/* ── 화면: 지난 소식 ── */
+async function viewArchive() {
+  setMenu("archive");
+  const issues = publicIssues(await allIssues());
+  const years = [...new Set(issues.map((i) => i.id.slice(0, 4)))];
+  const map = Object.fromEntries(issues.map((i) => [i.id, i]));
+  app.innerHTML = `
+    <div class="wrap">
+      <div class="phead"><div class="eyebrow">SCIC 월간 소식</div><h1>지난 소식</h1><p>연도와 달을 골라 그 달의 소식지를 다시 볼 수 있어요.</p></div>
+      ${years.length ? years.map((y) => `
+        <div class="year"><h2>${y}년</h2><div class="months">
+          ${Array.from({ length: 12 }, (_, i) => {
+            const id = `${y}-${String(i + 1).padStart(2, "0")}`, it = map[id];
+            if (!it) return `<div class="mon off"><div class="ph">·</div><div class="tx"><b>${i + 1}월</b><span>소식 없음</span></div></div>`;
+            return `<a class="mon" href="#/issue/${id}"><div class="ph">${it.coverThumb ? `<img src="${esc(it.coverThumb)}" alt="" loading="lazy">` : ""}</div>
+              <div class="tx"><b>${i + 1}월호</b><span>행사 ${it.events || 0} · 그룹 ${it.groups || 0}</span></div></a>`;
+          }).join("")}
+        </div></div>`).join("") : `<div class="empty" style="margin-top:24px">아직 소식지가 없어요.</div>`}
+    </div>`;
+}
+
+/* ── 화면: 소식 한 편 ── */
+function videoHtml(u) {
+  const m = u.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([\w-]{11})/);
+  if (m) return `<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${m[1]}" title="영상" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe></div>`;
+  const v = u.match(/vimeo\.com\/(\d+)/);
+  if (v) return `<div class="video"><iframe src="https://player.vimeo.com/video/${v[1]}" title="영상" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>`;
+  if (!/^https?:\/\//.test(u)) return "";
+  return `<a class="vlink" href="${esc(u)}" target="_blank" rel="noopener">${I.play}<span>영상 보러 가기</span></a>`;
+}
+function interviewHtml(iv) {
+  const qa = (iv.qa || []).filter((x) => x.q || x.a).map((x) =>
+    (x.q ? `<p class="q">Q. ${esc(x.q)}</p>` : "") + (x.a ? `<p class="a">${esc(x.a).replace(/\n/g, "<br>")}</p>` : "")).join("");
+  return `<div class="iv"><div class="iv-who"><b>${esc(iv.name)}</b>${iv.role ? `<span>${esc(iv.role)}</span>` : ""}</div>${qa}</div>`;
+}
+async function viewArticle(id) {
+  setMenu("");
+  const [a, groups] = [await store.article(id), (await settings()).groups];
+  if (!a || a.status === "deleted" || (a.status !== "published" && !isEditor())) {
+    app.innerHTML = `<div class="wrap narrow"><div class="phead"><h1>소식을 찾을 수 없어요</h1><p>지워졌거나 아직 공개되지 않은 소식이에요.</p><p style="margin-top:16px"><a class="btn line" href="#/">이달의 소식으로</a></p></div></div>`;
+    return;
+  }
+  const cls = a.section === "group" ? "c-group" : "c-event";
+  const secLink = a.section === "group" ? `<a href="#/group/${encodeURIComponent(a.group)}">${esc(a.group)}</a>` : `<a href="#/events">전체 행사 소식</a>`;
+  const w5 = W5.filter(([k]) => a[k]?.trim());
+  const body = paras(a.body);
+  app.innerHTML = `
+    <div class="wrap narrow ${cls}">
+      <div class="crumb"><a href="#/issue/${a.issue}">${issueLabel(a.issue)}</a> › ${secLink}${a.status === "draft" ? ` <span class="chip draft">임시 저장 · 편집자만 보여요</span>` : ""}</div>
+      <article class="story">
+        <h1>${esc(a.title)}</h1>
+        ${a.lead ? `<p class="lead">${esc(a.lead)}</p>` : ""}
+        <div class="by">${esc(a.author || "SCIC 소식지 편집팀")}${isEditor() ? ` · <a href="#/edit/${a.id}">고치기</a>` : ""}</div>
+        ${w5.length ? `<div class="w5"><h2>한눈에 보기</h2><dl>${w5.map(([k, l]) => `<dt>${l}</dt><dd>${esc(a[k])}</dd>`).join("")}</dl></div>` : ""}
+        ${body.length ? `<div class="prose">${body.map((p) => `<p>${esc(p).replace(/\n/g, "<br>")}</p>`).join("")}</div>` : ""}
+        <div id="photos">${a.photoCount ? `<h2 class="sub">사진</h2><div class="loading" style="padding:20px 0">사진을 불러오는 중…</div>` : ""}</div>
+        ${a.videos?.length ? `<h2 class="sub">영상</h2>${a.videos.map(videoHtml).join("")}` : ""}
+        ${a.interviews?.length ? `<h2 class="sub">인터뷰</h2>${a.interviews.map(interviewHtml).join("")}` : ""}
+        <div class="share-box"><h2>이 소식 나누기</h2>${shareButtons("article")}</div>
+        <div class="more row"><a class="btn line" href="#/issue/${a.issue}">‹ ${issueLabel(a.issue)} 전체 보기</a></div>
+      </article>
+    </div>`;
+
+  const url = pageUrl(`#/a/${a.id}`);
+  const title = `[SCIC 소식] ${a.title}`;
+  wireShare({
+    kakao: () => shareKakao({ title, text: summaryOf(a), url }),
+    mail: () => {
+      const lines = [a.title, a.lead || "", "", ...w5.map(([k, l]) => `${l}: ${a[k]}`), "", "사진·영상·인터뷰까지 보기:", url];
+      mailto(title, lines.join("\n"));
+    },
+    link: async () => { await copyText(url); toast("링크를 복사했어요."); },
+  });
+
+  if (a.photoCount) {
+    const photos = await store.photos(a.id);
+    const box = $("#photos");
+    if (!box) return;
+    box.innerHTML = photos.length ? `<h2 class="sub">사진 <small style="font-family:Pretendard;font-size:.85rem;color:var(--faint)">${photos.length}장</small></h2>
+      <div class="gallery ${photos.length === 1 ? "one" : ""}">${photos.map((p, i) => `<figure><button data-i="${i}" aria-label="사진 크게 보기"><img src="${esc(p.thumb || p.data)}" alt="${esc(p.caption)}" loading="lazy"></button>${p.caption ? `<figcaption>${esc(p.caption)}</figcaption>` : ""}</figure>`).join("")}</div>` : "";
+    if (photos.length === 1) { const im = $("#photos img"); if (im) im.src = photos[0].data || photos[0].thumb; }
+    $$("#photos [data-i]").forEach((b) => b.onclick = () => lightbox(photos, +b.dataset.i));
+  }
+}
+function lightbox(photos, i) {
+  const m = document.createElement("div");
+  m.className = "lb";
+  const draw = () => {
+    const p = photos[i];
+    m.innerHTML = `<img src="${esc(p.data || p.thumb)}" alt="${esc(p.caption)}">${p.caption ? `<p>${esc(p.caption)}</p>` : ""}<p style="opacity:.6;font-size:.85rem">${i + 1} / ${photos.length}</p>
+      <button class="x" aria-label="닫기">✕</button>${photos.length > 1 ? `<button class="pv" aria-label="이전">‹</button><button class="nx" aria-label="다음">›</button>` : ""}`;
+  };
+  const close = () => { m.remove(); document.removeEventListener("keydown", key); };
+  const move = (d) => { i = (i + d + photos.length) % photos.length; draw(); };
+  const key = (e) => { if (e.key === "Escape") close(); if (e.key === "ArrowLeft") move(-1); if (e.key === "ArrowRight") move(1); };
+  m.addEventListener("click", (e) => {
+    if (e.target.closest(".x") || e.target === m) close();
+    else if (e.target.closest(".pv")) move(-1);
+    else if (e.target.closest(".nx")) move(1);
+  });
+  let sx = null;
+  m.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; }, { passive: true });
+  m.addEventListener("touchend", (e) => { if (sx == null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) move(dx < 0 ? 1 : -1); sx = null; });
+  document.addEventListener("keydown", key);
+  draw(); document.body.appendChild(m);
+}
+
+/* ── 편집실 ── */
+function needCode() {
+  app.innerHTML = `
+    <div class="wrap narrow ed">
+      <h1>편집실</h1>
+      <div class="fset">
+        <h2>편집 번호</h2>
+        <p class="hint">소식지 편집팀에게 받은 번호를 넣어 주세요. 이 기기에서는 다시 묻지 않아요.</p>
+        <form id="codeForm" class="row">
+          <input type="password" id="code" inputmode="numeric" autocomplete="off" placeholder="편집 번호" style="flex:1;min-width:200px">
+          <button class="btn">들어가기</button>
+        </form>
+      </div>
+    </div>`;
+  $("#codeForm").onsubmit = async (e) => {
+    e.preventDefault();
+    const v = $("#code").value.trim();
+    if (!v) return;
+    try { await store.login(v); editorCode.set(v); issuesCache = null; $("#admLink").hidden = false; toast("편집실에 들어왔어요."); route(); }
+    catch (err) { err?.code === "permission-denied" ? toast("편집 번호가 맞지 않아요.") : fail(err); }
+  };
+}
+
+async function viewAdmin(params) {
+  setMenu("admin");
+  if (!isEditor()) return needCode();
+  const m = params.get("m") || thisMonth();
+  const [issue, list, s] = await Promise.all([store.issue(m), store.articlesWhere("issue", m), settings()]);
+  const arts = order(list);
+  const issues = await allIssues(true);
+  const months = [...new Set([thisMonth(), shiftMonth(thisMonth(), -1), shiftMonth(thisMonth(), 1), m, ...issues.map((i) => i.id)])].sort().reverse();
+  const row = (a) => `<div class="adm-item ${a.section === "group" ? "c-group" : "c-event"}">
+      ${a.coverThumb ? `<img src="${esc(a.coverThumb)}" alt="">` : `<img alt="">`}
+      <div class="t"><b>${a.featured ? "★ " : ""}${esc(a.title)}</b><span>${a.section === "group" ? esc(a.group) : "전체 행사"} · ${a.status === "published" ? "공개" : "임시 저장"}${a.photoCount ? ` · 사진 ${a.photoCount}장` : ""}</span></div>
+      <a class="btn line sm" href="#/a/${a.id}">보기</a><a class="btn sm" href="#/edit/${a.id}">고치기</a>
+    </div>`;
+
+  app.innerHTML = `
+    <div class="wrap narrow ed">
+      <div class="row" style="margin-bottom:16px"><h1 style="margin:0">편집실</h1><span class="spacer"></span><button class="btn ghost sm" id="logout">나가기</button></div>
+      <div class="fset">
+        <div class="row">
+          <label class="lab" for="mon">몇 월호</label>
+          <select id="mon" style="width:auto;flex:1;max-width:260px">${months.map((x) => `<option value="${x}" ${x === m ? "selected" : ""}>${issueLabel(x)}</option>`).join("")}</select>
+          <input type="month" id="monPick" value="${m}" style="width:auto" aria-label="다른 달 고르기">
+        </div>
+      </div>
+
+      <div class="fset">
+        <div class="row" style="margin-bottom:12px"><h2 style="margin:0">${issueLabel(m)} 소식 ${arts.length}편</h2><span class="spacer"></span><a class="btn" href="#/new/${m}">+ 새 소식 쓰기</a></div>
+        ${arts.length ? `<div class="adm-list">${arts.map(row).join("")}</div>` : `<div class="empty">아직 이 달의 소식이 없어요. '새 소식 쓰기'로 시작하세요.</div>`}
+        ${arts.some((a) => a.status === "published") ? `<div class="row" style="margin-top:14px"><a class="btn line" href="#/issue/${m}">${issueLabel(m)} 보기</a><button class="btn peri" id="mailBtn">이메일 소식지 만들기</button><button class="btn line" id="kakaoBtn">카톡으로 보내기</button></div>` : ""}
+      </div>
+
+      <div class="fset">
+        <h2>${issueLabel(m)} 여는 글</h2>
+        <p class="hint">소식지 맨 위에 나오는 제목과 인사말이에요. 비워 두면 소식 개수만 보여요.</p>
+        <div class="field"><label for="hl">이달의 제목</label><input type="text" id="hl" maxlength="80" value="${esc(issue?.headline || "")}" placeholder="예: 일터에서 만난 하나님"></div>
+        <div class="field"><label for="intro">인사말</label><textarea id="intro" maxlength="1500" placeholder="이달 소식지를 여는 짧은 인사를 적어 주세요.">${esc(issue?.intro || "")}</textarea></div>
+        <button class="btn peri" id="saveIntro">여는 글 저장</button>
+      </div>
+
+      <details class="fset">
+        <summary style="cursor:pointer;font-weight:700">선교 그룹 이름 바꾸기·추가 (${s.groups.length}개)</summary>
+        <p class="hint" style="margin-top:10px">이미 쓴 소식의 그룹 이름은 바뀌지 않으니, 이름은 처음에 한 번 정해 두는 게 좋아요. ✕를 누르면 목록에서 빠지지만 이미 쓴 소식은 그대로 남아요.</p>
+        <div class="gnames" id="gnames">${s.groups.map((g) => `<div class="gname"><input type="text" data-g value="${esc(g)}" maxlength="30"><button type="button" data-gx aria-label="이 그룹 빼기">✕</button></div>`).join("")}</div>
+        <div class="row" style="margin-top:12px"><button class="btn line" id="addGroupRow" type="button">+ 그룹 추가</button><button class="btn peri" id="saveGroups">그룹 저장</button></div>
+      </details>
+      ${store.demo ? `<p style="text-align:center"><button class="btn ghost sm" id="resetDemo">체험 모드 처음으로 되돌리기</button></p>` : ""}
+    </div>`;
+
+  const goMonth = (v) => { if (/^\d{4}-\d{2}$/.test(v)) location.hash = `#/admin?m=${v}`; };
+  $("#mon").onchange = (e) => goMonth(e.target.value);
+  $("#monPick").onchange = (e) => goMonth(e.target.value);
+  $("#logout").onclick = () => { editorCode.set(""); $("#admLink").hidden = true; toast("편집실에서 나왔어요."); location.hash = "#/"; };
+  $("#resetDemo")?.addEventListener("click", () => { store.reset(); location.reload(); });
+  const pub = arts.filter((a) => a.status === "published");
+  $("#mailBtn")?.addEventListener("click", () => mailModal(m, issue, pub, s.groups));
+  $("#kakaoBtn")?.addEventListener("click", () => shareKakao({ title: `SCIC 월간 소식 ${issueLabel(m)}`, text: pub.slice(0, 5).map((a) => `· ${a.title}`).join("\n"), url: pageUrl(`#/issue/${m}`) }));
+  $("#saveIntro").onclick = async (e) => {
+    e.target.disabled = true;
+    try {
+      await store.saveIssue(editorCode.get(), m, { ...summarize(list), headline: $("#hl").value.trim(), intro: $("#intro").value.trim() });
+      issuesCache = null; toast("여는 글을 저장했어요.");
+    } catch (err) { fail(err); } finally { e.target.disabled = false; }
+  };
+  const wireGx = () => $$("[data-gx]").forEach((b) => b.onclick = () => {
+    if ($$("[data-g]").length <= 1) return toast("그룹은 하나 이상 있어야 해요.");
+    b.parentElement.remove();
+  });
+  wireGx();
+  $("#addGroupRow").onclick = () => {
+    const d = document.createElement("div");
+    d.className = "gname";
+    d.innerHTML = `<input type="text" data-g value="" maxlength="30" placeholder="새 그룹 이름"><button type="button" data-gx aria-label="이 그룹 빼기">✕</button>`;
+    $("#gnames").appendChild(d); wireGx(); $("input", d).focus();
+  };
+  $("#saveGroups").onclick = async (e) => {
+    const g = $$("[data-g]").map((x) => x.value.trim()).filter(Boolean);
+    if (!g.length) return toast("그룹 이름을 하나 이상 적어 주세요.");
+    if (new Set(g).size !== g.length) return toast("같은 이름이 두 번 있어요.");
+    e.target.disabled = true;
+    try { await store.saveSettings(editorCode.get(), { groups: g }); settingsCache = null; toast("그룹을 저장했어요."); }
+    catch (err) { fail(err); } finally { e.target.disabled = false; }
+  };
+}
+
+/* 사진 줄이기: 원본은 1600px 안쪽, 목록용 작은 사진은 따로 */
+function loadImage(src) {
+  return new Promise((ok, no) => { const im = new Image(); im.onload = () => ok(im); im.onerror = no; im.src = src; });
+}
+function toJpeg(im, max, q) {
+  const w0 = im.naturalWidth || im.width, h0 = im.naturalHeight || im.height;
+  const r = Math.min(1, max / Math.max(w0, h0));
+  const c = document.createElement("canvas");
+  c.width = Math.round(w0 * r); c.height = Math.round(h0 * r);
+  const x = c.getContext("2d"); x.fillStyle = "#fff"; x.fillRect(0, 0, c.width, c.height);
+  x.drawImage(im, 0, 0, c.width, c.height);
+  return { url: c.toDataURL("image/jpeg", q), w: c.width, h: c.height };
+}
+async function compress(file) {
+  const src = URL.createObjectURL(file);
+  try {
+    const im = await loadImage(src);
+    let main;
+    for (const [max, q] of [[1600, 0.82], [1400, 0.75], [1200, 0.7], [1000, 0.65]]) {
+      main = toJpeg(im, max, q);
+      if (main.url.length < 800000) break;
+    }
+    return { data: main.url, w: main.w, h: main.h, thumb: toJpeg(im, 520, 0.72).url };
+  } finally { URL.revokeObjectURL(src); }
+}
+async function coverFrom(p) {
+  const im = await loadImage(p.data || p.thumb);
+  return toJpeg(im, 900, 0.74).url;
+}
+
+async function viewEdit(id, month) {
+  setMenu("admin");
+  if (!isEditor()) return needCode();
+  const s = await settings();
+  const isNew = !id;
+  let a = isNew ? null : await store.article(id);
+  if (!isNew && !a) { app.innerHTML = `<div class="wrap narrow ed"><h1>소식을 찾을 수 없어요</h1></div>`; return; }
+  a ||= { issue: month || thisMonth(), section: "event", status: "draft", videos: [], interviews: [], author: "" };
+  id ||= store.newArticleId();
+  const origIssue = a.issue;
+  const photos = isNew ? [] : (await store.photos(id)).map((p) => ({ ...p, orig: { caption: p.caption, order: p.order } }));
+  let coverIdx = Math.max(0, photos.findIndex((p) => p.thumb && a.coverThumb && a.coverId === p.id));
+  let interviews = JSON.parse(JSON.stringify(a.interviews || []));
+  const ph = {
+    who: "예: 제3선교그룹 회원 14명", when: "예: 2026년 9월 12일(토) 오전 10시", where: "예: 사랑의교회 안성수양관",
+    what: "예: 가을 연합 수련회를 열었습니다", how: "예: 주제 강의, 그룹 나눔, 파송 기도 순서로 진행했습니다", why: "예: 일터 선교의 부르심을 다시 확인하기 위해서였습니다",
+  };
+
+  app.innerHTML = `
+    <div class="wrap narrow ed">
+      <div class="crumb" style="padding-top:0;margin-bottom:10px"><a href="#/admin?m=${a.issue}">편집실</a> ›</div>
+      <h1>${isNew ? "새 소식 쓰기" : "소식 고치기"}</h1>
+
+      <div class="fset">
+        <h2>어디에 실을까요</h2>
+        <p class="hint">몇 월호에, 어느 소식으로 실을지 골라 주세요.</p>
+        <div class="field"><label for="f-issue">몇 월호</label><input type="month" id="f-issue" value="${esc(a.issue)}" required></div>
+        <div class="field"><span class="lab">구분</span>
+          <div class="seg">
+            <label><input type="radio" name="sec" value="event" ${a.section !== "group" ? "checked" : ""}>전체 행사 소식</label>
+            <label><input type="radio" name="sec" value="group" ${a.section === "group" ? "checked" : ""}>선교 그룹 소식</label>
+          </div>
+        </div>
+        <div class="field" id="grpField"><label for="f-group">선교 그룹</label>
+          <select id="f-group">${s.groups.map((g) => `<option ${g === a.group ? "selected" : ""}>${esc(g)}</option>`).join("")}${a.group && !s.groups.includes(a.group) ? `<option selected>${esc(a.group)}</option>` : ""}</select>
+        </div>
+        <label style="display:flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" id="f-feat" ${a.featured ? "checked" : ""} style="width:20px;height:20px;accent-color:var(--rose)"> 대표 소식으로 맨 앞에 크게 싣기</label>
+      </div>
+
+      <div class="fset">
+        <h2>제목</h2>
+        <div class="field"><label for="f-title">제목</label><input type="text" id="f-title" maxlength="80" value="${esc(a.title || "")}" placeholder="예: 일터에서 만난 하나님, 가을 연합 수련회"></div>
+        <div class="field"><label for="f-lead">한 줄 요약 <small>목록과 카톡에 보여요</small></label><input type="text" id="f-lead" maxlength="140" value="${esc(a.lead || "")}" placeholder="예: 13개 선교 그룹 동문 180명이 한자리에 모였습니다."></div>
+      </div>
+
+      <div class="fset">
+        <h2>육하원칙</h2>
+        <p class="hint">여섯 칸을 채우면 소식 맨 위 '한눈에 보기'에 나오고, 아래 단추로 본문 초안도 만들 수 있어요.</p>
+        <div class="w5-form">
+          ${W5.map(([k, l]) => `<div class="field"><label for="f-${k}"><b>${l}</b></label><input type="text" id="f-${k}" maxlength="200" value="${esc(a[k] || "")}" placeholder="${ph[k]}"></div>`).join("")}
+        </div>
+        <button class="btn line" id="draftBtn" type="button">육하원칙으로 본문 초안 만들기</button>
+      </div>
+
+      <div class="fset">
+        <h2>본문</h2>
+        <p class="hint">빈 줄을 한 줄 띄우면 문단이 나뉘어요.</p>
+        <div class="field"><textarea id="f-body" class="big" maxlength="20000">${esc(a.body || "")}</textarea></div>
+        <div class="field"><label for="f-author">글쓴이</label><input type="text" id="f-author" maxlength="40" value="${esc(a.author || "")}" placeholder="예: 홍길동 기자 (비워 두면 SCIC 소식지 편집팀)"></div>
+      </div>
+
+      <div class="fset">
+        <h2>사진</h2>
+        <p class="hint">여러 장을 한꺼번에 고를 수 있어요. 크기는 자동으로 줄여서 올립니다. 빨간 테두리 사진이 대표 사진이에요.</p>
+        <label class="drop" for="f-files">+ 사진 고르기<small>휴대폰 앨범이나 컴퓨터에서</small></label>
+        <input type="file" id="f-files" accept="image/*" multiple hidden>
+        <div class="phs" id="phs"></div>
+      </div>
+
+      <div class="fset">
+        <h2>영상</h2>
+        <p class="hint">유튜브에 올린 뒤 주소를 붙여 넣어 주세요. 한 줄에 하나씩. (유튜브는 '일부 공개'로 올리면 링크를 아는 사람만 봐요)</p>
+        <div class="field"><textarea id="f-videos" style="min-height:80px" placeholder="https://youtu.be/...">${esc((a.videos || []).join("\n"))}</textarea></div>
+      </div>
+
+      <div class="fset">
+        <h2>인터뷰</h2>
+        <p class="hint">참석자나 섬긴 분의 이야기를 질문과 답으로 담아요.</p>
+        <div id="ivs"></div>
+        <button class="btn line" id="addIv" type="button">+ 인터뷰 추가</button>
+      </div>
+
+      ${!isNew ? `<div class="fset"><h2>지우기</h2><p class="hint">지운 소식은 소식지와 보관함에서 사라져요.</p><button class="btn danger" id="delBtn" type="button">이 소식 지우기</button></div>` : ""}
+    </div>
+    <div class="savebar"><div class="wrap narrow">
+      <span id="saveMsg" style="color:var(--soft);font-size:.88rem">${a.status === "published" ? "지금 공개된 소식이에요." : "아직 공개하지 않은 소식이에요."}</span>
+      <span class="spacer"></span>
+      <button class="btn line" id="saveDraft">임시 저장</button>
+      <button class="btn" id="savePub">${a.status === "published" ? "저장하기" : "공개하기"}</button>
+    </div></div>`;
+
+  const secVal = () => $("input[name=sec]:checked").value;
+  const syncSec = () => { $("#grpField").hidden = secVal() !== "group"; };
+  $$("input[name=sec]").forEach((r) => r.onchange = syncSec); syncSec();
+
+  $("#draftBtn").onclick = () => {
+    const v = Object.fromEntries(W5.map(([k]) => [k, $(`#f-${k}`).value.trim().replace(/[.。]$/, "")]));
+    if (!v.what) return toast("'무엇을' 칸을 먼저 채워 주세요.");
+    const first = [v.when && v.when + ",", v.who && josa(v.who, "이/가"), v.where && v.where + "에서", v.what].filter(Boolean).join(" ") + ".";
+    const rest = [v.why, v.how].filter(Boolean).map((x) => x + ".").join(" ");
+    const draft = [first, rest].filter(Boolean).join("\n\n");
+    const t = $("#f-body");
+    if (t.value.trim() && !confirm("지금 본문 앞에 초안을 붙일까요?")) return;
+    t.value = t.value.trim() ? draft + "\n\n" + t.value : draft;
+    toast("초안을 만들었어요. 본문에서 다듬어 주세요.");
+  };
+
+  // 사진
+  const drawPhotos = () => {
+    const live = photos.filter((p) => !p.removed);
+    if (coverIdx >= live.length) coverIdx = 0;
+    $("#phs").innerHTML = live.map((p, i) => `
+      <div class="p ${i === coverIdx ? "cover" : ""}">
+        <img src="${esc(p.thumb || p.data)}" alt="">
+        <div class="pc">
+          <input type="text" data-cap="${i}" value="${esc(p.caption || "")}" placeholder="사진 설명(선택)" maxlength="120">
+          <div class="row">
+            <label><input type="radio" name="cov" data-cov="${i}" ${i === coverIdx ? "checked" : ""}>대표</label>
+            <span>
+              <button class="btn ghost sm" data-mv="${i}:-1" type="button" ${i === 0 ? "disabled" : ""} aria-label="앞으로">←</button>
+              <button class="btn ghost sm" data-mv="${i}:1" type="button" ${i === live.length - 1 ? "disabled" : ""} aria-label="뒤로">→</button>
+              <button class="btn ghost sm" data-rm="${i}" type="button" style="color:#b3261e">빼기</button>
+            </span>
+          </div>
+        </div>
+      </div>`).join("");
+    $$("[data-cap]").forEach((x) => x.oninput = () => { live[+x.dataset.cap].caption = x.value; });
+    $$("[data-cov]").forEach((x) => x.onchange = () => { coverIdx = +x.dataset.cov; drawPhotos(); });
+    $$("[data-rm]").forEach((x) => x.onclick = () => {
+      const p = live[+x.dataset.rm];
+      if (p.id) p.removed = true; else photos.splice(photos.indexOf(p), 1);
+      if (+x.dataset.rm < coverIdx) coverIdx--;
+      drawPhotos();
+    });
+    $$("[data-mv]").forEach((x) => x.onclick = () => {
+      const [i, d] = x.dataset.mv.split(":").map(Number);
+      const A = live[i], B = live[i + d];
+      const ia = photos.indexOf(A), ib = photos.indexOf(B);
+      [photos[ia], photos[ib]] = [photos[ib], photos[ia]];
+      if (coverIdx === i) coverIdx = i + d; else if (coverIdx === i + d) coverIdx = i;
+      drawPhotos();
+    });
+  };
+  if (a.coverId) { const ci = photos.filter((p) => !p.removed).findIndex((p) => p.id === a.coverId); if (ci >= 0) coverIdx = ci; }
+  drawPhotos();
+  $("#f-files").onchange = async (e) => {
+    const files = [...e.target.files]; e.target.value = "";
+    let n = 0;
+    for (const f of files) {
+      toast(`사진 준비 중… ${++n} / ${files.length}`);
+      try { photos.push({ ...(await compress(f)), caption: "", isNew: true }); }
+      catch { toast(`'${f.name}' 사진을 열 수 없어요. JPG나 PNG로 바꿔서 올려 주세요.`); }
+      drawPhotos();
+    }
+    toast(`사진 ${files.length}장을 붙였어요. 저장해야 올라가요.`);
+  };
+
+  // 인터뷰
+  const drawIvs = () => {
+    $("#ivs").innerHTML = interviews.map((iv, i) => `
+      <div class="ivf">
+        <div class="w5-form">
+          <div class="field"><label>이름</label><input type="text" data-iv="${i}:name" value="${esc(iv.name || "")}" maxlength="40" placeholder="예: 김OO 동문"></div>
+          <div class="field"><label>소개</label><input type="text" data-iv="${i}:role" value="${esc(iv.role || "")}" maxlength="60" placeholder="예: 12기 · 제조업"></div>
+        </div>
+        ${(iv.qa || []).map((x, j) => `<div class="qa">
+          <input type="text" data-qa="${i}:${j}:q" value="${esc(x.q || "")}" maxlength="200" placeholder="질문">
+          <textarea data-qa="${i}:${j}:a" style="min-height:80px" maxlength="2000" placeholder="답">${esc(x.a || "")}</textarea>
+        </div>`).join("")}
+        <div class="row"><button class="btn line sm" data-addq="${i}" type="button">+ 질문 추가</button><span class="spacer"></span><button class="btn ghost sm" data-rmiv="${i}" type="button" style="color:#b3261e">이 인터뷰 빼기</button></div>
+      </div>`).join("");
+    $$("[data-iv]").forEach((x) => x.oninput = () => { const [i, k] = x.dataset.iv.split(":"); interviews[i][k] = x.value; });
+    $$("[data-qa]").forEach((x) => x.oninput = () => { const [i, j, k] = x.dataset.qa.split(":"); interviews[i].qa[j][k] = x.value; });
+    $$("[data-addq]").forEach((x) => x.onclick = () => { interviews[x.dataset.addq].qa.push({ q: "", a: "" }); drawIvs(); });
+    $$("[data-rmiv]").forEach((x) => x.onclick = () => { if (confirm("이 인터뷰를 뺄까요?")) { interviews.splice(+x.dataset.rmiv, 1); drawIvs(); } });
+  };
+  drawIvs();
+  $("#addIv").onclick = () => { interviews.push({ name: "", role: "", qa: [{ q: "", a: "" }] }); drawIvs(); };
+
+  // 저장
+  const code = editorCode.get();
+  const refreshIssue = async (m) => {
+    const list = await store.articlesWhere("issue", m);
+    const cur = await store.issue(m);
+    await store.saveIssue(code, m, { ...summarize(list), headline: cur?.headline || "", intro: cur?.intro || "" });
+  };
+  const save = async (status, btn) => {
+    const issue = $("#f-issue").value;
+    const title = $("#f-title").value.trim();
+    if (!/^\d{4}-\d{2}$/.test(issue)) return toast("몇 월호인지 골라 주세요.");
+    if (!title) { $("#f-title").focus(); return toast("제목을 적어 주세요."); }
+    $$(".savebar button").forEach((b) => b.disabled = true);
+    const msg = $("#saveMsg");
+    try {
+      const live = photos.filter((p) => !p.removed);
+      let k = 0;
+      for (const [i, p] of live.entries()) {
+        if (p.isNew) {
+          msg.textContent = `사진 올리는 중… ${++k} / ${live.filter((x) => x.isNew).length}`;
+          p.id = await store.addPhoto(code, { article: id, data: p.data, thumb: p.thumb, caption: p.caption || "", w: p.w, h: p.h, order: i });
+          p.isNew = false; p.orig = { caption: p.caption, order: i };
+        } else if (p.orig && (p.orig.caption !== p.caption || p.orig.order !== i)) {
+          await store.updatePhoto(code, p.id, { caption: p.caption || "", order: i });
+          p.orig = { caption: p.caption, order: i };
+        }
+      }
+      for (const p of photos.filter((x) => x.removed && x.id && !x.gone)) { await store.updatePhoto(code, p.id, { hidden: true }); p.gone = true; }
+      msg.textContent = "저장하는 중…";
+      const cov = live[coverIdx];
+      const coverThumb = cov ? (a.coverId === cov.id && a.coverThumb ? a.coverThumb : await coverFrom(cov)) : "";
+      const sec = secVal();
+      const data = {
+        issue, section: sec, group: sec === "group" ? $("#f-group").value : "",
+        title, lead: $("#f-lead").value.trim(), featured: $("#f-feat").checked,
+        ...Object.fromEntries(W5.map(([k]) => [k, $(`#f-${k}`).value.trim()])),
+        body: $("#f-body").value.trim(), author: $("#f-author").value.trim(),
+        videos: $("#f-videos").value.split(/\s*\n\s*/).map((v) => v.trim()).filter(Boolean).slice(0, 10),
+        interviews: interviews.map((iv) => ({ name: (iv.name || "").trim(), role: (iv.role || "").trim(), qa: (iv.qa || []).filter((x) => x.q?.trim() || x.a?.trim()) })).filter((iv) => iv.name || iv.qa.length),
+        coverThumb, coverId: cov?.id || "", photoCount: live.length, status,
+      };
+      await store.saveArticle(code, id, data);
+      a = { ...a, ...data };
+      await refreshIssue(issue);
+      if (origIssue && origIssue !== issue) await refreshIssue(origIssue);
+      issuesCache = null;
+      toast(status === "published" ? "공개했어요. 카톡과 이메일로 알려 보세요." : "임시 저장했어요. 편집자만 볼 수 있어요.");
+      location.hash = `#/a/${id}`;
+    } catch (err) {
+      fail(err); msg.textContent = "저장하지 못했어요. 다시 눌러 주세요.";
+      $$(".savebar button").forEach((b) => b.disabled = false);
+    }
+  };
+  $("#saveDraft").onclick = (e) => save("draft", e.target);
+  $("#savePub").onclick = (e) => save("published", e.target);
+  $("#delBtn")?.addEventListener("click", async () => {
+    if (!confirm("이 소식을 지울까요? 되돌릴 수 없어요.")) return;
+    try {
+      await store.saveArticle(code, id, { status: "deleted" });
+      await refreshIssue(origIssue);
+      issuesCache = null; toast("소식을 지웠어요."); location.hash = `#/admin?m=${origIssue}`;
+    } catch (err) { fail(err); }
+  });
+}
+
+/* ── 길 찾기 ── */
+async function route() {
+  const h = decodeURIComponent(location.hash.slice(1) || "/");
+  const [path, qs] = h.split("?");
+  const p = path.split("/").filter(Boolean);
+  const params = new URLSearchParams(qs || "");
+  $("#admLink").hidden = !isEditor();
+  window.scrollTo(0, 0);
+  try {
+    if (!p.length) await viewIssue();
+    else if (p[0] === "issue" && /^\d{4}-\d{2}$/.test(p[1])) await viewIssue(p[1]);
+    else if (p[0] === "events") await viewList("event");
+    else if (p[0] === "groups") await viewGroups();
+    else if (p[0] === "group") await viewList("group", p.slice(1).join("/"));
+    else if (p[0] === "archive") await viewArchive();
+    else if (p[0] === "a") await viewArticle(p[1]);
+    else if (p[0] === "admin") await viewAdmin(params);
+    else if (p[0] === "edit") await viewEdit(p[1]);
+    else if (p[0] === "new") await viewEdit(null, p[1]);
+    else await viewIssue();
+  } catch (e) {
+    console.error(e);
+    app.innerHTML = `<div class="wrap narrow"><div class="phead"><h1>잠시 연결이 안 돼요</h1><p>조금 뒤에 다시 열어 주세요.</p></div></div>`;
+  }
+}
+addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>

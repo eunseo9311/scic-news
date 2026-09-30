@@ -1,0 +1,4 @@
+firestore.rules
+.DS_Store
+.firebase/
+*.log
