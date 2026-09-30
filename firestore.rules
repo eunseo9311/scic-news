@@ -1,0 +1,62 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 편집자 명단은 meta/editors 문서({admins: [...], editors: [...]})에 있습니다.
+    // 명단 문서는 규칙을 거치지 않는 Firebase 콘솔이나 프로젝트 소유자 권한으로 처음 만듭니다.
+    function signedIn() {
+      return request.auth != null && request.auth.token.email_verified == true
+        && request.auth.token.firebase.sign_in_provider == 'google.com';
+    }
+    function me() { return request.auth.token.email.lower(); }
+    function roster() { return /databases/$(database)/documents/meta/editors; }
+    function admin() {
+      return signedIn() && exists(roster()) && me() in get(roster()).data.admins;
+    }
+    function editor() {
+      return admin() || (signedIn() && exists(roster()) && me() in get(roster()).data.editors);
+    }
+    function str(f, n) {
+      let d = request.resource.data;
+      return !(f in d) || (d[f] is string && d[f].size() <= n);
+    }
+
+    match /meta/settings {
+      allow read: if true;
+      allow create, update: if editor()
+        && request.resource.data.groups is list && request.resource.data.groups.size() <= 60;
+    }
+
+    // 편집자 명단은 편집자만 봅니다. 고치는 것은 관리자만 합니다.
+    match /meta/editors {
+      allow get: if editor();
+      allow create, update: if admin()
+        && request.resource.data.admins is list && request.resource.data.admins.size() <= 50
+        && request.resource.data.editors is list && request.resource.data.editors.size() <= 200;
+    }
+
+    match /issues/{id} {
+      allow read: if true;
+      allow create, update: if editor() && id.matches('^[0-9]{4}-[0-9]{2}$')
+        && str('headline', 80) && str('intro', 1500) && str('coverThumb', 300000);
+    }
+
+    match /articles/{id} {
+      allow read: if true;
+      allow create, update: if editor()
+        && request.resource.data.status in ['draft', 'published', 'deleted']
+        && request.resource.data.issue is string && request.resource.data.issue.matches('^[0-9]{4}-[0-9]{2}$')
+        && request.resource.data.section in ['event', 'group']
+        && str('title', 80) && str('lead', 140) && str('body', 20000) && str('coverThumb', 300000)
+        && str('who', 200) && str('when', 200) && str('where', 200) && str('what', 200) && str('how', 200) && str('why', 200);
+    }
+
+    match /photos/{id} {
+      allow read: if true;
+      allow create: if editor() && request.resource.data.article is string
+        && str('data', 950000) && str('thumb', 150000) && str('caption', 120);
+      allow update: if editor() && str('caption', 120)
+        && request.resource.data.article == resource.data.article;
+    }
+  }
+}

@@ -1,7 +1,6 @@
 // SCIC 소식 저장소. 주소에 ?demo 가 있으면 이 기기 안에만 저장하는 체험 모드로 돕니다.
-// 읽기는 누구나, 쓰기는 편집 번호를 아는 사람만 합니다.
-// 쓸 때마다 편집 번호를 담은 '열쇠 문서'(_w)를 같은 묶음으로 함께 만들고, 규칙은 그 열쇠가
-// 이번 묶음에서 새로 생겼는지만 확인합니다. 열쇠 문서는 아무도 읽을 수 없어 번호가 새지 않습니다.
+// 읽기는 누구나, 쓰기는 편집자로 등록된 구글 계정으로 로그인한 사람만 합니다.
+// 편집자 명단은 meta/editors 문서({admins, editors})에 있고, 규칙이 로그인한 이메일을 이 명단과 맞춰 봅니다.
 export const firebaseConfig = {
   apiKey: "AIzaSyDA9Ad93x0qwznYhSUaCOkOmfF1x8Wmpe8",
   authDomain: "scic-monthly-news.firebaseapp.com",
@@ -19,14 +18,12 @@ const ls = {
   get(k) { try { return localStorage.getItem(k); } catch { return null; } },
   set(k, v) { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch {} },
 };
-export const editorCode = {
-  get: () => ls.get("scic.code") || "",
-  set: (v) => ls.set("scic.code", v || null),
-};
 
 function newId() {
   return Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
 }
+const denied = () => Object.assign(new Error("denied"), { code: "permission-denied" });
+const cleanList = (xs) => [...new Set((xs || []).map((e) => String(e).trim().toLowerCase()).filter(Boolean))];
 
 const store = isDemo ? demoStore() : await firebaseStore(firebaseConfig);
 export default store;
@@ -38,24 +35,34 @@ function demoStore() {
   let db;
   try { db = JSON.parse(ls.get(KEY)) || null; } catch { db = null; }
   if (!db) { db = empty(); seed(db); }
+  db.editors ||= { admins: ["demo@example.com"], editors: [] };
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(db)); } catch {} };
   save();
-  const check = (code) => { if (code !== "1234") throw Object.assign(new Error("denied"), { code: "permission-denied" }); };
   const clone = (x) => JSON.parse(JSON.stringify(x));
+  const subs = new Set();
+  let user = ls.get("scic.demo.user") ? { email: "demo@example.com", name: "체험 편집자", photo: "" } : null;
+  const emit = () => subs.forEach((fn) => fn(user));
+  const roleOf = (email) => db.editors.admins.includes(email) ? "admin" : db.editors.editors.includes(email) ? "editor" : "";
+  const check = () => { if (!user || !roleOf(user.email)) throw denied(); };
 
   return {
     demo: true,
-    async login(code) { check(code); },
+    onAuth(fn) { subs.add(fn); fn(user); return () => subs.delete(fn); },
+    async signIn() { ls.set("scic.demo.user", "1"); user = { email: "demo@example.com", name: "체험 편집자", photo: "" }; emit(); },
+    async signOut() { ls.set("scic.demo.user", null); user = null; emit(); },
+    async role() { return user ? roleOf(user.email) : ""; },
+    async editors() { check(); return clone(db.editors); },
+    async saveEditors(v) { check(); if (roleOf(user.email) !== "admin") throw denied(); db.editors = { admins: cleanList(v.admins), editors: cleanList(v.editors) }; save(); },
     async settings() { return clone(db.settings); },
-    async saveSettings(code, s) { check(code); db.settings = { ...db.settings, ...s }; save(); },
+    async saveSettings(s) { check(); db.settings = { ...db.settings, ...s }; save(); },
     async issues() { return clone(Object.entries(db.issues).map(([id, v]) => ({ ...v, id })).sort((a, b) => b.id.localeCompare(a.id))); },
     async issue(id) { return db.issues[id] ? clone({ ...db.issues[id], id }) : null; },
-    async saveIssue(code, id, data) { check(code); db.issues[id] = { ...(db.issues[id] || {}), ...data }; save(); },
+    async saveIssue(id, data) { check(); db.issues[id] = { ...(db.issues[id] || {}), ...data }; save(); },
     async articlesWhere(field, value) { return clone(db.articles.filter((a) => a[field] === value && a.status !== "deleted")); },
     async article(id) { const a = db.articles.find((x) => x.id === id); return a ? clone(a) : null; },
     newArticleId: newId,
-    async saveArticle(code, id, data) {
-      check(code);
+    async saveArticle(id, data) {
+      check();
       const i = db.articles.findIndex((x) => x.id === id);
       const now = Date.now();
       if (i < 0) db.articles.push({ ...data, id, createdAt: now, updatedAt: now });
@@ -65,15 +72,15 @@ function demoStore() {
     async photos(articleId) {
       return clone(db.photos.filter((p) => p.article === articleId && !p.hidden).sort((a, b) => a.order - b.order));
     },
-    async addPhoto(code, p) {
-      check(code);
+    async addPhoto(p) {
+      check();
       const id = newId();
       db.photos.push({ ...p, id, hidden: false, createdAt: Date.now() });
       try { localStorage.setItem(KEY, JSON.stringify(db)); } catch { /* 체험 모드는 기기 저장 공간이 작아 사진이 새로고침 뒤 사라질 수 있어요 */ }
       return id;
     },
-    async updatePhoto(code, id, data) {
-      check(code);
+    async updatePhoto(id, data) {
+      check();
       const p = db.photos.find((x) => x.id === id);
       if (p) Object.assign(p, data, data.hidden ? { data: "", thumb: "" } : {});
       save();
@@ -85,33 +92,60 @@ function demoStore() {
 /* ───────────── Firebase ───────────── */
 async function firebaseStore(config) {
   const base = "https://www.gstatic.com/firebasejs/10.14.1";
-  const [{ initializeApp }, fs] = await Promise.all([
+  const [{ initializeApp }, fs, au] = await Promise.all([
     import(`${base}/firebase-app.js`),
     import(`${base}/firebase-firestore.js`),
+    import(`${base}/firebase-auth.js`),
   ]);
-  const db = fs.getFirestore(initializeApp(config));
+  const app = initializeApp(config);
+  const db = fs.getFirestore(app);
+  const auth = au.getAuth(app);
   const ms = (t) => (t && t.toMillis ? t.toMillis() : typeof t === "number" ? t : Date.now());
   const toItem = (d) => { const v = d.data(); return { ...v, id: d.id, createdAt: ms(v.createdAt), updatedAt: ms(v.updatedAt) }; };
-
-  // 편집 번호를 담은 열쇠 문서와 실제 쓰기를 한 묶음으로 보냅니다.
-  async function write(code, fn) {
-    const batch = fs.writeBatch(db);
-    const token = fs.doc(fs.collection(db, "_w"));
-    batch.set(token, { key: code, at: fs.serverTimestamp() });
-    const out = fn(batch, token.id);
-    await batch.commit();
-    return out;
-  }
+  const toUser = (u) => u && { email: (u.email || "").toLowerCase(), name: u.displayName || "", photo: u.photoURL || "" };
+  const editorsRef = fs.doc(db, "meta", "editors");
 
   return {
     demo: false,
-    login(code) { return write(code, () => {}); },
+    onAuth(fn) { return au.onAuthStateChanged(auth, (u) => fn(toUser(u))); },
+    async signIn() {
+      const p = new au.GoogleAuthProvider();
+      p.setCustomParameters({ prompt: "select_account" });
+      try { await au.signInWithPopup(auth, p); }
+      catch (e) {
+        if (e.code === "auth/popup-blocked" || e.code === "auth/operation-not-supported-in-this-environment") return au.signInWithRedirect(auth, p);
+        throw e;
+      }
+    },
+    signOut() { return au.signOut(auth); },
+    // 명단을 읽을 수 있으면 편집자다. 명단에 없는데 읽혔다면 규칙에 적힌 처음 관리자다.
+    async role() {
+      const u = toUser(auth.currentUser);
+      if (!u) return "";
+      try {
+        const d = await fs.getDoc(editorsRef);
+        const v = d.exists() ? d.data() : {};
+        if ((v.editors || []).includes(u.email) && !(v.admins || []).includes(u.email)) return "editor";
+        return "admin";
+      } catch (e) {
+        if (e.code === "permission-denied") return "";
+        throw e;
+      }
+    },
+    async editors() {
+      const d = await fs.getDoc(editorsRef);
+      const v = d.exists() ? d.data() : {};
+      return { admins: v.admins || [], editors: v.editors || [] };
+    },
+    saveEditors(v) {
+      return fs.setDoc(editorsRef, { admins: cleanList(v.admins), editors: cleanList(v.editors), updatedAt: fs.serverTimestamp() });
+    },
     async settings() {
       const d = await fs.getDoc(fs.doc(db, "meta", "settings"));
       return d.exists() ? d.data() : { groups: DEFAULT_GROUPS };
     },
-    saveSettings(code, s) {
-      return write(code, (b, t) => b.set(fs.doc(db, "meta", "settings"), { ...s, t }, { merge: true }));
+    saveSettings(s) {
+      return fs.setDoc(fs.doc(db, "meta", "settings"), s, { merge: true });
     },
     async issues() {
       const s = await fs.getDocs(fs.collection(db, "issues"));
@@ -121,8 +155,8 @@ async function firebaseStore(config) {
       const d = await fs.getDoc(fs.doc(db, "issues", id));
       return d.exists() ? toItem(d) : null;
     },
-    saveIssue(code, id, data) {
-      return write(code, (b, t) => b.set(fs.doc(db, "issues", id), { ...data, t, updatedAt: fs.serverTimestamp() }, { merge: true }));
+    saveIssue(id, data) {
+      return fs.setDoc(fs.doc(db, "issues", id), { ...data, updatedAt: fs.serverTimestamp() }, { merge: true });
     },
     async articlesWhere(field, value) {
       const s = await fs.getDocs(fs.query(fs.collection(db, "articles"), fs.where(field, "==", value), fs.limit(400)));
@@ -133,24 +167,25 @@ async function firebaseStore(config) {
       return d.exists() ? toItem(d) : null;
     },
     newArticleId: () => fs.doc(fs.collection(db, "articles")).id,
-    async saveArticle(code, id, data) {
+    async saveArticle(id, data) {
       const ref = fs.doc(db, "articles", id);
       const exists = (await fs.getDoc(ref)).exists();
-      return write(code, (b, t) => b.set(ref, {
-        ...data, t, updatedAt: fs.serverTimestamp(),
+      return fs.setDoc(ref, {
+        ...data, updatedAt: fs.serverTimestamp(),
         ...(exists ? {} : { createdAt: fs.serverTimestamp() }),
-      }, { merge: true }));
+      }, { merge: true });
     },
     async photos(articleId) {
       const s = await fs.getDocs(fs.query(fs.collection(db, "photos"), fs.where("article", "==", articleId), fs.limit(200)));
       return s.docs.map(toItem).filter((p) => !p.hidden).sort((a, b) => a.order - b.order);
     },
-    addPhoto(code, p) {
+    async addPhoto(p) {
       const ref = fs.doc(fs.collection(db, "photos"));
-      return write(code, (b, t) => { b.set(ref, { ...p, hidden: false, t, createdAt: fs.serverTimestamp() }); return ref.id; });
+      await fs.setDoc(ref, { ...p, hidden: false, createdAt: fs.serverTimestamp() });
+      return ref.id;
     },
-    updatePhoto(code, id, data) {
-      return write(code, (b, t) => b.update(fs.doc(db, "photos", id), { ...data, ...(data.hidden ? { data: "", thumb: "" } : {}), t }));
+    updatePhoto(id, data) {
+      return fs.updateDoc(fs.doc(db, "photos", id), { ...data, ...(data.hidden ? { data: "", thumb: "" } : {}) });
     },
   };
 }
